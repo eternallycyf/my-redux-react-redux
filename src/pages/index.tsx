@@ -1,9 +1,17 @@
-import styles from './index.less';
+import Header from './Header';
+import Content from './Content';
+import { store } from './modules';
+import Provider from '@/component/react-redux/Provider'
 
-export default function IndexPage() {
+const Index = () => {
   return (
-    <div>
-      <h1 className={styles.title}>Page index</h1>
-    </div>
+    <>
+      <Provider store={store}>
+        <Header />
+        <Content />
+      </Provider>
+    </>
   );
-}
+};
+
+export default Index;
